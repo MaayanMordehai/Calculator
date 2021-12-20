@@ -19,11 +19,6 @@ body {
     background-color: rgba(31, 28, 28, 0.75);
 }
 
-.operands {
-    color: rgb(185, 61, 98);
-    font-size: 2rem;
-}
-
 .actions {
     color: rgb(185, 61, 98);
     font-size: 1rem;
@@ -32,7 +27,6 @@ body {
 .calculator-grid > button:hover {
     background-color: rgba(31, 28, 28, .85);
 }
-
 
 .span-three {
     grid-column: span 3;
