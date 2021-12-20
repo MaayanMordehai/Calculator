@@ -1,13 +1,29 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Number = (props) => {
+const NumberComp = (props) => {
+    const { currentExercise, num, classes, changeCurrentExercise } = props;
+
+    const numberClicked = () => {
+        let newExercise = [...currentExercise];
+        let lastObject = newExercise.at(-1);
+        let numToInsert = num;
+
+        if (Number.isInteger(lastObject)) {
+            newExercise.pop();
+            numToInsert = num + lastObject * 10;
+        }
+
+        newExercise.push(numToInsert);
+        changeCurrentExercise(newExercise);
+    }
+
     return (
-        <button onClick={() => props.changeCurrentNumber(props.num + props.currentNum*10)} className={"numbers".concat(" ", props.classes)}>{props.num}</button>
+        <button onClick={() => numberClicked()} className={"numbers".concat(" ", classes)}>{num}</button>
     )
 }
 
 
 
 
-export default Number;
+export default NumberComp;
