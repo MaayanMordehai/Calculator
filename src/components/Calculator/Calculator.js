@@ -4,7 +4,7 @@ import React from "react";
 import { useState } from "react";
 import Operand from "../Operand/Operand";
 import History from "./History/history";
-
+import Backdrop from "./History/Backdrop/backdrop";
 
 const Calculator = (props) => {
  
@@ -61,6 +61,7 @@ const Calculator = (props) => {
     console.log(currentExercise)
     return (
         <div className={styles.calculatorgrid}>
+          <Backdrop show={showHistory}/>
           <div className={styles.output}>
             <div className={styles.previousoperand}>{resetExercise ? currentExercise.join('') : null}</div>
             <div className={styles.currentoperand}>{resetExercise ? answer : currentExercise.join('')}</div>

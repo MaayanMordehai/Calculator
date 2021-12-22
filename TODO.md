@@ -1,0 +1,3 @@
+- backdrop - how to catch all calculator css? center text?
+- history - save only 5 back
+- add prop types validation

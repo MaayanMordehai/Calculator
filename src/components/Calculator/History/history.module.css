@@ -1,0 +1,19 @@
+
+.calcbutton {
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, .2);
+    outline: none;
+    background-color: rgba(31, 28, 28, 0.75);
+}
+
+.calcbutton:hover {
+    background-color: rgba(31, 28, 28, .85);
+}
+
+
+
+.history {
+    color: white;
+    margin-left: 40%;
+
+}

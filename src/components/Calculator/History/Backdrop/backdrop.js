@@ -1,10 +1,8 @@
 import React from "react";
-import classes from "./history.css";
-import PropTypes from "prop-types";
+import classes from "./backdrop.module.css";
 
-const backdrop = (props) => {
-    const {showHistory} = props;
-    showHistory ? <div className={classes.backdrop}></div> : null
-}
+const Backdrop = (props) => (
+    props.show ? <div className={classes.Backdrop} onClick={props.clicked}>{props.children}</div> : null
+);
 
-export default backdrop;
+export default Backdrop;
