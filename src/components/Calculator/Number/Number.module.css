@@ -1,0 +1,15 @@
+.numbers {
+    color: rgb(93, 170, 243);
+    font-size: 2rem;
+}
+
+.calcbutton {
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, .2);
+    outline: none;
+    background-color: rgba(31, 28, 28, 0.75);
+}
+
+.calcbutton:hover {
+    background-color: rgba(31, 28, 28, .85);
+}

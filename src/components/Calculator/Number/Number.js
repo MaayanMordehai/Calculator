@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styles from "./Number.module.css"
 
 const NumberComp = (props) => {
     const { resetExercise, setResetExercise, currentExercise, num, classes, changeCurrentExercise } = props;
@@ -25,7 +26,7 @@ const NumberComp = (props) => {
     }
 
     return (
-        <button onClick={() => numberClicked()} className={"numbers".concat(" ", classes)}>{num}</button>
+        <button onClick={() => numberClicked()} className={[styles.numbers, styles.calcbutton, classes].join(' ')} >{num}</button>
     )
 }
 

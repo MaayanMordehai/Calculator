@@ -1,4 +1,4 @@
-import "./Calculator.css";
+import styles from "./Calculator.module.css";
 import NumberComp from "./Number/Number";
 import React from "react";
 import { useState } from "react";
@@ -57,16 +57,13 @@ const Calculator = (props) => {
       }
     }
 
-    const historyClicked = () => {
-      setShowHistory(!showHistory);
-    }
 
     console.log(currentExercise)
     return (
-        <div className="calculator-grid">
-          <div className="output">
-            <div className="previous-operand">{resetExercise ? currentExercise.join('') : null}</div>
-            <div className="current-operand">{resetExercise ? answer : currentExercise.join('')}</div>
+        <div className={styles.calculatorgrid}>
+          <div className={styles.output}>
+            <div className={styles.previousoperand}>{resetExercise ? currentExercise.join('') : null}</div>
+            <div className={styles.currentoperand}>{resetExercise ? answer : currentExercise.join('')}</div>
           </div>
           <NumberComp num={1} resetExercise={resetExercise} setResetExercise={setResetExercise} currentExercise={currentExercise} changeCurrentExercise={setCurrentExercise}/>
           <NumberComp num={2} resetExercise={resetExercise} setResetExercise={setResetExercise} currentExercise={currentExercise} changeCurrentExercise={setCurrentExercise} />
@@ -80,13 +77,12 @@ const Calculator = (props) => {
           <NumberComp num={8} resetExercise={resetExercise} setResetExercise={setResetExercise} currentExercise={currentExercise} changeCurrentExercise={setCurrentExercise}/>
           <NumberComp num={9} resetExercise={resetExercise} setResetExercise={setResetExercise} currentExercise={currentExercise} changeCurrentExercise={setCurrentExercise}/>
           <Operand ignore={resetExercise} operand={operands.multipul} currentExercise={currentExercise} changeCurrentExercise={setCurrentExercise} />
-          <NumberComp num={0} resetExercise={resetExercise} setResetExercise={setResetExercise} currentExercise={currentExercise} changeCurrentExercise={setCurrentExercise} classes={["span-three"]}/>
+          <NumberComp num={0} resetExercise={resetExercise} setResetExercise={setResetExercise} currentExercise={currentExercise} changeCurrentExercise={setCurrentExercise} classes={styles.spanthree}/>
           <Operand ignore={resetExercise} operand={operands.devide} currentExercise={currentExercise} changeCurrentExercise={setCurrentExercise} />
-          <button className="actions" onClick={() => historyClicked()}>HISTORY</button>
-          <button className="actions" onClick={() => clearClicked()}>CLEAR</button>
-          <button className="actions" onClick={() => deleteClicked()}>DELETE</button>
-          <button className="actions" onClick={() => calculate()}>{operands.equal}</button>
-          {showHistory ? <History history={history}/> : null}
+          <History history={history} classes={styles.actions} setShowHistory={setShowHistory} showHistory={showHistory}/>
+          <button className={styles.actions} onClick={() => clearClicked()}>CLEAR</button>
+          <button className={styles.actions} onClick={() => deleteClicked()}>DELETE</button>
+          <button className={styles.actions} onClick={() => calculate()}>{operands.equal}</button>
         </div>
       )
 }

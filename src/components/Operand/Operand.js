@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./Operand.css"
 
 const Operand = (props) => {
     const { ignore, currentExercise, operand, changeCurrentExercise } = props;
