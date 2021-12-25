@@ -27,4 +27,11 @@ const History = (props) => {
     );
 }
 
+History.propTypes = {
+    history : PropTypes.arrayOf(PropTypes.array),
+    showHistory : PropTypes.bool,
+    setShowHistory : PropTypes.func,
+    classes : PropTypes.array
+}
+
 export default History;

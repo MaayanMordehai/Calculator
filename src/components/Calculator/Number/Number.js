@@ -30,4 +30,13 @@ const NumberComp = (props) => {
     )
 }
 
+NumberComp.propTypes = {
+    resetExercise : PropTypes.bool,
+    setResetExercise : PropTypes.func,
+    currentExercise : PropTypes.array,
+    num : PropTypes.number,
+    classes : PropTypes.array,
+    changeCurrentExercise : PropTypes.func
+}
+
 export default NumberComp;

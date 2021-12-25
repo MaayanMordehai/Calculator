@@ -21,4 +21,11 @@ const Operand = (props) => {
     )
 }
 
+Operand.propTypes = {
+    ignore: PropTypes.bool,
+    currentExercise: PropTypes.array,
+    operand: PropTypes.string,
+    changeCurrentExercise: PropTypes.func
+}
+
 export default Operand;
